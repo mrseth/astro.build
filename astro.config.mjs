@@ -54,7 +54,7 @@ export default defineConfig({
 	},
 	vite: {
 		ssr: {
-			noExternal: ['smartypants'],
+			noExternal: ['smartypants', 'zod'],
 		},
 	},
 	adapter: netlify({ imageCDN: false }),

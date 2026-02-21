@@ -6,13 +6,26 @@ interface Props {
 	date: string;
 }
 
-const themes = await fetch(
+const raw = await fetch(
 	new URL(`/api/themes/monthly?month=${Astro.props.date}`, THEMES_API_URL),
 ).then((res) => res.json());
+
+// API may return array or { object: [...] }; ensure we have an array of valid items
+const themes = Array.isArray(raw)
+	? raw
+	: Array.isArray(raw?.object)
+		? raw.object
+		: [];
+const validThemes = themes.filter(
+	(t: any) => t && (t.Theme || t.object?.Theme) && (t.Author || t.object?.Author),
+).map((t: any) => ({
+	Theme: t.Theme ?? t.object?.Theme,
+	Author: t.Author ?? t.object?.Author,
+}));
 ---
 
 <ul
 	class="grid gap-5 !p-0 md:grid-flow-row-dense md:grid-cols-2 lg:-mx-16 lg:!mb-16 lg:!mt-8 lg:grid-cols-3 xl:-mx-32"
 >
-	{themes.map((theme: any) => <ThemeCard {...theme} />)}
+	{validThemes.map((theme: any) => <ThemeCard {...theme} />)}
 </ul>

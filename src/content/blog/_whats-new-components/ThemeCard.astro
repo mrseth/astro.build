@@ -2,14 +2,15 @@
 import { Image } from 'astro:assets';
 
 interface Props {
-	Theme: { title: string; image: string; slug: string };
-	Author: { name: string };
+	Theme?: { title: string; image: string; slug: string };
+	Author?: { name: string };
 }
 
 const { Author, Theme } = Astro.props;
-const { title, image, slug } = Theme;
+const { title, image, slug } = Theme ?? {};
 ---
 
+{Theme && Author && (
 <li
 	class:list={[
 		'group relative flex aspect-[1200/630] h-full w-full cursor-pointer flex-col overflow-hidden bg-astro-gray-600',
@@ -36,3 +37,4 @@ const { title, image, slug } = Theme;
 		</span>
 	</a>
 </li>
+)}
