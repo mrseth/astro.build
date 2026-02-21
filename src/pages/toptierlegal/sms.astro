@@ -1,0 +1,52 @@
+---
+import TopTierLegalLayout from '~/layouts/TopTierLegalLayout.astro';
+import TopTierLegalNav from './_components/TopTierLegalNav.astro';
+import TopTierLegalFooter from './_components/TopTierLegalFooter.astro';
+---
+<TopTierLegalLayout title="SMS Program — Top Tier Legal PLLC" description="Top Tier Legal PLLC SMS program. Opt out, help, and support information.">
+	<TopTierLegalNav />
+	<main class="min-h-screen">
+		<section class="border-b border-stone-200 bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+			<div class="mx-auto max-w-2xl">
+				<h1 class="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl" style="font-family: 'Cormorant Garamond', serif;">SMS Program</h1>
+				<p class="mt-4 text-stone-600 leading-relaxed">
+					Top Tier Legal PLLC may send SMS messages to customers who provide their mobile number and consent. Message frequency may vary. Message & data rates may apply.
+				</p>
+
+				<div class="mt-10 space-y-8">
+					<div class="rounded-lg border border-stone-200 bg-stone-50/50 p-6">
+						<h2 class="text-lg font-semibold text-stone-900">Opt out</h2>
+						<p class="mt-2 text-stone-600">Reply STOP at any time.</p>
+					</div>
+					<div class="rounded-lg border border-stone-200 bg-stone-50/50 p-6">
+						<h2 class="text-lg font-semibold text-stone-900">Help</h2>
+						<p class="mt-2 text-stone-600">Reply HELP for assistance.</p>
+					</div>
+					<div class="rounded-lg border border-stone-200 bg-stone-50/50 p-6">
+						<h2 class="text-lg font-semibold text-stone-900">Support</h2>
+						<p class="mt-2 text-stone-600">
+							<a href="mailto:clientcare@toptierlegalpllc.com" class="hover:underline">clientcare@toptierlegalpllc.com</a>
+							<span class="text-stone-400">·</span>
+							<a href="tel:+18455960430" class="hover:underline">(845) 596-0430</a>
+						</p>
+					</div>
+				</div>
+
+				<p class="mt-10 text-sm text-stone-600">
+					For additional details, please review our <a href="/toptierlegal/privacy" class="font-medium text-stone-900 hover:underline">Privacy Policy</a> and <a href="/toptierlegal/terms" class="font-medium text-stone-900 hover:underline">Terms of Service</a>.
+				</p>
+
+				<div class="mt-10 border-t border-stone-200 pt-8">
+					<p class="text-sm font-medium text-stone-700">Top Tier Legal PLLC</p>
+					<p class="mt-1 text-sm text-stone-600">24 Heatherbloom Road White Plains, NY 10605</p>
+					<p class="mt-1 text-sm text-stone-600">
+						<a href="mailto:clientcare@toptierlegalpllc.com" class="hover:underline">clientcare@toptierlegalpllc.com</a>
+						<span class="text-stone-400">·</span>
+						<a href="tel:+18455960430" class="hover:underline">(845) 596-0430</a>
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<TopTierLegalFooter />
+</TopTierLegalLayout>
