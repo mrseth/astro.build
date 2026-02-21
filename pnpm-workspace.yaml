@@ -1,2 +1,4 @@
+packages: []
+
 patchedDependencies:
   astro: patches/astro.patch
